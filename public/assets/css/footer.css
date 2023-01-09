@@ -1,0 +1,20 @@
+@import url("../../../../css2");
+/*
+Copy Right Footer Content Style
+=====================================================*/
+.footer-content {
+  text-align: center;
+  background: #EBF1FF 0% 0% no-repeat padding-box;
+  border: 1px solid #CAD6F2;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 12px;
+}
+.footer-content p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #292D32;
+}
+.footer-content p a {
+  color: #1765FD;
+}/*# sourceMappingURL=footer.css.map */
