@@ -11,6 +11,6 @@ class Home extends Client
 	 */
 	public function index(): string
 	{
-		return $this->view('client.pages.home', $this->data);
+		return $this->view('pages.home', $this->data);
 	}
 }

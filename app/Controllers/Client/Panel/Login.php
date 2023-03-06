@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Controllers\Panel\Auth;
+namespace App\Controllers\Client\Panel;
 
-use App\Controllers\Panel;
-use Symfony\Component\HttpFoundation\Request;
+use App\Controllers\Client;
 use PDO;
+use Symfony\Component\HttpFoundation\Request;
 
-class Login extends Panel
+class Login extends Client
 {
 	public function __construct()
 	{
@@ -43,26 +43,24 @@ class Login extends Panel
 					id
 				FROM users
 				WHERE
-				    banned = 0 AND
-				    status = 1 AND
-				    (username = '$username' AND password = '$password')";
+			    status = 1 AND deleted_at IS NULL AND
+			    (username = '{$username}' AND password = '{$password}')";
 
 				$query = $this->db->query($sql)->fetch(PDO::FETCH_OBJ);
 
 				if ($query)
 				{
-					session()->segment->set('panel_login', true);
 					session()->segment->set('user_login', true);
 					session()->segment->set('user_id', $query->id);
 
-					header('Location: ' . site_url('panel/dashboard'));
+					header('Location: ' . site_url());
 					exit;
 				}
 				else
 				{
 					$error = [
 						'class' => 'danger',
-						'text' => 'Credentials incorrect.'
+						'text' => 'Kullanıcı adı veya şifre yanlış.'
 					];
 				}
 			}
@@ -70,13 +68,13 @@ class Login extends Panel
 			{
 				$error = [
 					'class' => 'warning',
-					'text' => 'Please don\'t leave any blank spaces.'
+					'text' => 'Lütfen boş alan bırakmayın.'
 				];
 			}
 		}
 
 		$this->data['error'] = $error;
 
-		return $this->view('panel.pages.auth.login', $this->data);
+		return $this->view('pages.panel.login', $this->data);
 	}
 }

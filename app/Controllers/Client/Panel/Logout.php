@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers\Client\Panel\Auth;
+namespace App\Controllers\Client\Panel;
 
 use App\Controllers\Client;
 
@@ -10,7 +10,7 @@ class Logout extends Client
 	{
 		session()->clear();
 
-		header('Location: ' . site_url('panel/login'));
+		header('Location: ' . site_url());
 		exit;
 	}
 }

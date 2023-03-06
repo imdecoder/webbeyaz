@@ -11,14 +11,6 @@
 				</a>
 			</li>
 			<li>
-				<a href="{{ site_url('panel/calendar') }}" class="box-style d-flex align-items-center">
-					<div class="icon">
-						<img src="{{ asset_url('images/icon/calendar.svg') }}" alt="Takvim">
-					</div>
-					<span class="menu-title">Takvim</span>
-				</a>
-			</li>
-			<li>
 				<a href="{{ site_url('catalog') }}" class="box-style d-flex align-items-center">
 					<div class="icon">
 						<img src="{{ asset_url('images/icon/book.svg') }}" alt="Katalog">
@@ -29,7 +21,7 @@
 			<li>
 				<a href="{{ site_url('vehicles') }}" class="box-style d-flex align-items-center">
 					<div class="icon">
-						<img src="{{ asset_url('images/icon/diagram.svg') }}" alt="Araçlar">
+						<img src="{{ asset_url('images/icon/fatrows.svg') }}" alt="Araçlar">
 					</div>
 					<span class="menu-title">Araçlar</span>
 				</a>
@@ -67,7 +59,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="#" class="box-style d-flex align-items-center">
+				<a href="{{ site_url('services') }}" class="box-style d-flex align-items-center">
 					<div class="icon">
 						<img src="{{ asset_url('images/icon/layer.svg') }}" alt="Hizmetler">
 					</div>
@@ -75,7 +67,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="#" class="box-style d-flex align-items-center">
+				<a href="{{ site_url('feed') }}" class="box-style d-flex align-items-center">
 					<div class="icon">
 						<img src="{{ asset_url('images/icon/message.svg') }}" alt="Haberler & Hikayeler">
 					</div>
